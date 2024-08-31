@@ -6,7 +6,7 @@ function Home1() {
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      const movementStrength = 15; 
+      const movementStrength = 50; 
       const width = movementStrength / window.innerWidth;
       const height = movementStrength / window.innerHeight;
 
@@ -36,7 +36,7 @@ function Home1() {
   return (
     <div
       ref={topImageRef}
-      className="h-screen w-full bg-no-repeat bg-cover"
+      className="h-screen w-full bg-no-repeat bg-cover snap-start"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'calc(100% + 50px)',

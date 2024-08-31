@@ -1,7 +1,7 @@
 import React from 'react';
 import backgroundVideo from '../assets/video.mp4'; 
 
-function Home2() {
+function Home4() {
   return (
     <div className="h-screen w-full relative snap-start">
       <video
@@ -30,4 +30,4 @@ function Home2() {
   );
 }
 
-export default Home2;
+export default Home4;
