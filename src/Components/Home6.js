@@ -1,29 +1,53 @@
-import React from 'react';
-import backgroundVideo from '../assets/video.mp4'; 
+import React, { useEffect, useState } from 'react';
+import backgroundImage from '../assets/chatbot-bg.jpeg';
 
 function Home6() {
+  const fullText = "Discover Our Chatbot";
+  const [textIndex, setTextIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const typeText = () => {
+      if (textIndex < fullText.length) {
+        setTextIndex((prevIndex) => prevIndex + 1);
+      } else {
+        setIsTyping(false);
+      }
+    };
+
+    const deleteText = () => {
+      if (textIndex > 0) {
+        setTextIndex((prevIndex) => prevIndex - 1);
+      } else {
+        setIsTyping(true);
+      }
+    };
+
+    const intervalId = setInterval(() => {
+      if (isTyping) {
+        typeText();
+      } else {
+        deleteText();
+      }
+    }, 100); // Adjust speed here
+
+    return () => clearInterval(intervalId);
+  }, [textIndex, isTyping]);
+
+  const displayedText = fullText.slice(0, textIndex);
+
   return (
     <div className="h-screen w-full relative snap-start">
-      <video
+      <img
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src={backgroundVideo}
-        autoPlay
-        loop
-        muted
+        src={backgroundImage}
+        alt='chatbot bg'
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className="text-5xl font-bold">
-          Experience the <span className="italic text-yellow-500">Diversity</span>
-        </h1>
-        <p className="mt-4 text-lg">
-          Discover the vast and vibrant cultures of India.
+        <p className='text-7xl'>
+          {displayedText.slice(0, 12)} {/* "Discover Our" */}
+          <span className='text-red-500'>{displayedText.slice(12)}</span> {/* "Chatbot" */}
         </p>
-        <p className="mt-8 text-sm font-medium uppercase tracking-wide">
-          Continue Exploring
-        </p>
-        <div className="mt-2 animate-bounce text-yellow-500 text-2xl">
-          ⬇️
-        </div>
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
     </div>

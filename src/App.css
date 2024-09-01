@@ -1,5 +1,8 @@
 /* write your css here */
 /* Scroll container */
+body {
+    font-family: Samarkan, sans-serif;
+}
 .scroll-snap-y {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;

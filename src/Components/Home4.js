@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundImage from '../assets/mohenjo-ruins.jpeg';
+import backgroundImage from '../assets/mohenjo-top.jpeg';
 import priestImage from '../assets/priest.jpeg';
 
 function Home4() {
@@ -16,7 +16,7 @@ function Home4() {
             Mohenjo-daro, one of the most renowned cities of this civilization, was a marvel of urban planning. Its streets were laid out in a grid pattern, with houses made of brick and equipped with advanced sanitation systems. The Great Bath, a massive rectangular pool, was a testament to the city's focus on hygiene and communal gatherings.
           </p>
         </div>
-        <img src={priestImage} alt="Priest from Mohenjo-daro" className="mt-4 rounded-md mx-10" />
+        {/*<img src={priestImage} alt="Priest from Mohenjo-daro" className="mt-4 rounded-md mx-10" />*/}
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
     </div>
