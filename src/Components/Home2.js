@@ -1,5 +1,5 @@
 import React from 'react';
-import backgroundVideo from '../assets/video.mp4'; 
+import backgroundVideo from '../assets/India-intro.mp4';
 
 function Home2() {
   return (
@@ -12,18 +12,16 @@ function Home2() {
         muted
       />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className="text-5xl font-bold">
-          Experience the <span className="italic text-yellow-500">Diversity</span>
+        <h1 className="text-5xl font-serif m-[40px]">
+          Get to know the <span className="italic text-yellow-500">Heritage</span> of India
         </h1>
-        <p className="mt-4 text-lg">
-          Discover the vast and vibrant cultures of India.
+        <hr className="w-[500px] border-t-2 border-gray-300 my-5" />
+        <p className="mt-4 text-2xl max-w-2xl font-serif">
+          India, a vast and diverse country, is home to one of the world's oldest and most rich civilizations. With a history dating back thousands of years, India has been a melting pot of cultures, religions, and traditions.
         </p>
-        <p className="mt-8 text-sm font-medium uppercase tracking-wide">
-          Continue Exploring
+        <p className='mt-4 text-2xl max-w-2xl font-serif'>
+          From the majestic Himalayas to the serene beaches of the Indian Ocean, India boasts breathtaking natural beauty. Its ancient cities, bustling markets, and spiritual centers offer a glimpse into the country's rich heritage.
         </p>
-        <div className="mt-2 animate-bounce text-yellow-500 text-2xl">
-          ⬇️
-        </div>
       </div>
       <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
     </div>

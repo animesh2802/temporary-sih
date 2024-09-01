@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import backgroundImage from '../assets/home1-bg.jpg'; 
 
 function Home1() {
   const topImageRef = useRef(null);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -33,29 +34,36 @@ function Home1() {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowOverlay(true);
+    }, 800); // Delay for 0.7 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       ref={topImageRef}
-      className="h-screen w-full bg-no-repeat bg-cover snap-start"
+      className="h-screen w-full bg-no-repeat bg-cover snap-start relative"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'calc(100% + 50px)',
         transition: 'background-position 0.6s ease-out',
       }}
     >
+      {/* White smoke-like filter overlay */}
+      <div
+        className={`absolute inset-0 bg-white pointer-events-none transition-opacity duration-20 ${showOverlay ? 'opacity-20' : 'opacity-0'}`}
+      ></div>
+
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-        <h1 className="text-5xl font-bold text-gray-800">
-          The <span className="italic text-red-500">Incredible</span> India!
+        <h1 className="text-5xl font-bold text-white m-[137px] top-1">
+          <span className="italic text-red-500">Incredible</span> India!
         </h1>
-        <p className="mt-4 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-white">
           The story of India, in a beautiful artistic presentation.
         </p>
-        <p className="mt-8 text-sm font-medium text-gray-700 uppercase tracking-wide">
-          Scroll Down
-        </p>
-        <div className="mt-2 animate-bounce text-red-500 text-2xl">
-          ⬇️
-        </div>
       </div>
     </div>
   );

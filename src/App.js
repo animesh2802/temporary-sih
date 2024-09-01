@@ -5,15 +5,16 @@ import Home3 from './Components/Home3';
 import Home4 from './Components/Home4';
 import Home5 from './Components/Home5';
 import Home6 from './Components/Home6';
-import Sidebarcontainer from './Components/Sidebarcontainer';
+//import './App.css';
+//import Sidebarcontainer from './Components/Sidebarcontainer';
 
 function App() {
   return (
     <div className='relative h-screen'>
-      <div>
+      {/*<div>
         <Sidebarcontainer />
-      </div>
-      <div className='flex flex-col'>
+      </div>*/}
+      <div className='flex flex-col snap-y snap-mandatory h-screen overflow-y-scroll'>
         <div className='home1 h-[100vh] w-[100vw]'>
           <Home1 />
         </div>
@@ -32,6 +33,9 @@ function App() {
         <div id="section6" className="snap-start h-screen w-full">
           <Home6 />
         </div>
+        {/*<div>
+          <Chatbot/>
+        </div>*/}
       </div>
     </div>
   );

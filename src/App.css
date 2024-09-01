@@ -1,1 +1,15 @@
 /* write your css here */
+/* Scroll container */
+.scroll-snap-y {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    /* Ensure the container is full height */
+}
+
+/* Snap target sections */
+.snap-start {
+    scroll-snap-align: start;
+    height: 100vh;
+    /* Ensure each section is full height */
+}
