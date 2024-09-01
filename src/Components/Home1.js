@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import backgroundImage from '../assets/home1-bg.jpg'; 
+import backgroundImage from '../assets/home1bg.jpeg'; 
 
 function Home1() {
   const topImageRef = useRef(null);
@@ -59,7 +59,8 @@ function Home1() {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
         <h1 className="text-5xl font-bold text-white m-[137px] top-1">
-          <span className="italic text-red-500">Incredible</span> India!
+          <span className=" text-black">Incredible </span>
+          <span className="italic text-black ">India!</span>
         </h1>
         <p className="mt-4 text-lg text-white">
           The story of India, in a beautiful artistic presentation.

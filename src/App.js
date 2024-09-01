@@ -5,6 +5,7 @@ import Home3 from './Components/Home3';
 import Home4 from './Components/Home4';
 import Home5 from './Components/Home5';
 import Home6 from './Components/Home6';
+import Chatbot from './Components/Chatbot';
 //import './App.css';
 //import Sidebarcontainer from './Components/Sidebarcontainer';
 
@@ -33,9 +34,9 @@ function App() {
         <div id="section6" className="snap-start h-screen w-full">
           <Home6 />
         </div>
-        {/*<div>
+        <div id='chatbot' className='App'>
           <Chatbot/>
-        </div>*/}
+        </div>
       </div>
     </div>
   );
